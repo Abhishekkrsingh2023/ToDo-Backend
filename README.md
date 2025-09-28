@@ -7,18 +7,23 @@ A complete backend for a Todo application using FastAPI with JWT authentication 
 - ✅ JWT-based authentication (login + register)
 - ✅ User management with secure password hashing
 - ✅ User-specific todo CRUD operations
-- ✅ SQLite database with SQLAlchemy ORM
+- ✅ PostgreSQL database with SQLAlchemy ORM
 - ✅ Pydantic schemas for request/response validation
 - ✅ Clean code structure with separation of concerns
 
 ## Installation
 
-1. Install dependencies:
+1. Package Manager
 ```bash
-pip install -r requirements.txt
+uv init project_name
 ```
 
-2. Run the application:
+2. Install dependencies:
+```bash
+uv add -r requirements.txt
+```
+
+3. Run the application:
 ```bash
 uvicorn main:app --reload
 ```
@@ -139,7 +144,7 @@ Create a `.env` file with:
 SECRET_KEY=your-super-secret-key-change-this-in-production
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
-DATABASE_URL=sqlite:///./todo.db
+DATABASE_URL=URL_TO_YOUR_POSGRESS_SERVER
 HOST=0.0.0.0
 PORT=8000
 ```
@@ -154,3 +159,4 @@ For production deployment:
 4. Use environment variables for all configuration
 5. Set up proper logging
 6. Use a production ASGI server like Gunicorn with Uvicorn workers
+
